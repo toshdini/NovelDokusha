@@ -13,6 +13,7 @@ import my.noveldokusha.feature.local_database.DAOs.LibraryDao
 import my.noveldokusha.feature.local_database.tables.Book
 import my.noveldokusha.feature.local_database.tables.Chapter
 import my.noveldokusha.feature.local_database.tables.ChapterBody
+import my.noveldokusha.feature.local_database.tables.LibraryCategory
 import java.io.InputStream
 
 
@@ -56,9 +57,10 @@ interface AppDatabase {
     entities = [
         Book::class,
         Chapter::class,
-        ChapterBody::class
+        ChapterBody::class,
+        LibraryCategory::class
     ],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 internal abstract class AppRoomDatabase : RoomDatabase(), AppDatabase {

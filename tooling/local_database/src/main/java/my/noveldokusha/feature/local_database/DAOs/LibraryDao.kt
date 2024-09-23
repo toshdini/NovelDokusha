@@ -9,6 +9,7 @@ import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 import my.noveldokusha.feature.local_database.BookWithContext
 import my.noveldokusha.feature.local_database.tables.Book
+import my.noveldokusha.feature.local_database.tables.LibraryCategory
 
 @Dao
 interface LibraryDao {
@@ -73,5 +74,9 @@ interface LibraryDao {
 
     @Query("DELETE FROM Book WHERE inLibrary == 0")
     suspend fun removeAllNonLibraryRows()
+
+    // TODO: Add insert, update, delete for LibraryCategory
+    @Query("SELECT * FROM LibraryCategory")
+    fun getLibraryCategoriesFlow(): Flow<List<LibraryCategory>>
 
 }
