@@ -60,7 +60,7 @@ interface AppDatabase {
         ChapterBody::class,
         LibraryCategory::class
     ],
-    version = 6,
+    version = 5,
     exportSchema = false
 )
 internal abstract class AppRoomDatabase : RoomDatabase(), AppDatabase {
